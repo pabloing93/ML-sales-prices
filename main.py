@@ -1,6 +1,7 @@
 import pandas
 import functions
 
+
 #Step 1: getting the data
 #Step 2: Normalizing
 #Step 3: cleaning
@@ -10,6 +11,12 @@ import functions
 data = pandas.read_json('inmuebles.json')
 
 dataset = functions.json_to_df(data)
+
+dataset = functions.clean_and_normalize(dataset)
+
+# print(dataset)
+# print(dataset.info())
+# print(dataset[['features.usableAreas', 'features.totalAreas']].head(100))
 
 # x_train, x_test, y_train, y_test = train_dataset(dataset['column'])
 
